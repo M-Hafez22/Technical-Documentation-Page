@@ -285,11 +285,34 @@
 
           <div class="sec-ex">
             <h5>Example 2</h5>
-            <p></p>
-            <p></p>
-            <code></code>
+            <p>A statement labeled checkiandj contains a statement labeled checkj. If continue is encountered, the program terminates the current iteration of checkj and begins the next iteration. Each time continue is encountered, checkj reiterates until its condition returns false. When false is returned, the remainder of the checkiandj statement is completed, and checkiandj reiterates until its condition returns false. When false is returned, the program continues at the statement following checkiandj.</p>
+            <p>If continue had a label of checkiandj, the program would continue at the top of the checkiandj statement.</p>
+            <code>
+                let i = 0; <br>
+                let j = 10; <br>
+                checkiandj: <br>
+                  while (i < 4) {  <br>
+                    console.log(i); <br>
+                    i += 1; <br>
+                    checkj: <br>
+                      while (j > 4) { <br>
+                        console.log(j); <br>
+                        j -= 1; <br>
+                        if ((j % 2) == 0) { <br>
+                          continue checkj; <br>
+                        } <br>
+                        console.log(j + ' is odd.'); <br>
+                      } <br>
+                      console.log('i = ' + i); <br>
+                      console.log('j = ' + j); <br>
+                  }
+            </code>
           </div>
         </section>
+
+
+
+        
       </main>
       <aside></aside>
 </body>
