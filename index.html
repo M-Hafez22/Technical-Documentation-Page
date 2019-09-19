@@ -157,8 +157,35 @@
                   }
               </code>
             </div>
-            
+
         </section>
+
+        <!-- labeled statemen -->
+        <section class="main-section">  
+          <h2 id="labeled_statement" class="sec-header">labeled statement</h2>
+
+          <p>A label provides a statement with an identifier that lets you refer to it elsewhere in your program. For example, you can use a label to identify a loop, and then use the break or continue statements to indicate whether a program should interrupt the loop or continue its execution.</p>
+
+          <p>The syntax of the labeled statement looks like the following:</p>
+
+          <p class="loop-form">
+              label :<br>
+              statement
+          </p>
+
+          <p>The value of label may be any JavaScript identifier that is not a reserved word. The statement that you identify with a label may be any statement.</p>
+        </section>
+
+        <div class="sec-ex">
+          <h5>Example</h5>
+          <p>In this example, the label markLoop identifies a while loop.</p>
+          <code>
+              markLoop:<br>
+              while (theMark == true) {<br>
+                 doSomething();<br>
+              }
+          </code>
+        </div>
       </main>
       <aside></aside>
 </body>
