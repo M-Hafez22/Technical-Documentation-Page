@@ -187,7 +187,109 @@
             </div>
         </section>
 
+        <!-- break statement -->
+        <section class="main-section">
+          <h2 id="break_statement" class="sec-header">break statement</h2>
+          <p>Use the break statement to terminate a loop, switch, or in conjunction with a labeled statement.</p>
+
+          <ul>
+            <li>When you use break without a label, it terminates the innermost enclosing while, do-while, for, or switch immediately and transfers control to the following statement.</li>
+            <li>When you use break with a label, it terminates the specified labeled statement.</li>
+          </ul>
+
+          <p>The syntax of the break statement looks like this:</p>
+          <p>break [label];</p>
+          <p>The first form of the syntax terminates the innermost enclosing loop or switch; the second form of the syntax terminates the specified enclosing labeled statement.</p>
+
+          <div class="sec-ex">
+            <h5>Example 1</h5>
+            <p>The following example iterates through the elements in an array until it finds the index of an element whose value is theValue:</p>
+            <code>
+                for (let i = 0; i < a.length; i++) {<br>
+                  if (a[i] == theValue) {<br>
+                    break;<br>
+                  }<br>
+                }
+            </code>
+          </div>
+
+          <div class="sec-ex">
+            <h5>Example 2: Breaking to a label</h5>
+            <code>
+                let x = 0;<br>
+                let z = 0;<br>
+                labelCancelLoops: while (true) {<br>
+                  console.log('Outer loops: ' + x);<br>
+                  x += 1;<br>
+                  z = 1;<br>
+                  while (true) {<br>
+                    console.log('Inner loops: ' + z);<br>
+                    z += 1;<br>
+                    if (z === 10 && x === 10) {<br>
+                      break labelCancelLoops;<br>
+                    } else if (z === 10) {<br>
+                      break;<br>
+                    }<br>
+                  }<br>
+                }
+            </code>
+          </div>
+
+
+
+        </section>
         
+        <!-- continue statement -->
+        <section class="main-section">
+          <h2 id="continue_statement" class="sec-header">continue statement</h2>
+
+          <p>The continue statement can be used to restart a while, do-while, for, or label statement.</p>
+
+          <ul>
+            <li>When you use continue without a label, it terminates the current iteration of the innermost enclosing while, do-while, or for statement and continues execution of the loop with the next iteration. In contrast to the break statement, continue does not terminate the execution of the loop entirely. In a while loop, it jumps back to the condition. In a for loop, it jumps to the increment-expression.</li>
+            <li>When you use continue with a label, it applies to the looping statement identified with that label.</li>
+          </ul>
+
+          <p>The syntax of the continue statement looks like the following:</p>
+          <p class="loop-form"> continue [label];</p>
+          <div class="sec-ex">
+            <h5>Example 1</h5>
+            <p>The following example shows a while loop with a continue statement that executes when the value of i is three. Thus, n takes on the values one, three, seven, and twelve</p>
+            <code>
+                let i = 0;<br>
+                let n = 0;<br>
+                while (i < 5) {<br>
+                  i++;<br>
+                  if (i == 3) {<br>
+                    continue;<br>
+                  }<br>
+                  n += i;<br>
+                  console.log(n);<br>
+                }<br>
+                //1,3,7,12<br>
+                <br>
+                <br>
+                let i = 0; <br>
+                let n = 0; <br>
+                while (i < 5) { <br>
+                  i++; <br>
+                  if (i == 3) {<br> 
+                     // continue; <br>
+                  } <br>
+                  n += i; <br>
+                  console.log(n);<br>
+                }<br>
+                // 1,3,6,10,15
+            </code>
+          </div>
+
+          <div class="sec-ex">
+            <h5>Example 2</h5>
+            <p></p>
+            <p></p>
+            <code></code>
+          </div>
+        </section>
       </main>
       <aside></aside>
 </body>
