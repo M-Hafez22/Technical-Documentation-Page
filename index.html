@@ -42,7 +42,7 @@
           -->
     
         </section>
-        
+
         <!-- For Statement -->
         <section class="main-section">
             <h2 class="sec-header">for statement</h2>
@@ -61,6 +61,7 @@
             </ol>
       
             <div class="sec-ex">
+              <h5 >Example</h5>
               <p>The following function contains a for statement that counts the number of selected options in a scrolling list (a <select> element that allows multiple selections). The for statement declares the variable i and initializes it to zero. It checks that i is less than the number of options in the <select> element, performs the succeeding if statement, and increments i by one after each pass through the loop.</p>
       
               <code>
@@ -82,6 +83,32 @@
       
             </div>
         </section>
+
+        <!-- While do statement -->
+        <section class="main-section">
+            <h2 id="do...while_statement" class="sec-header">do...while statement</h2>
+            <p>The do...while statement repeats until a specified condition evaluates to false. A do...while statement looks as follows:</p>
+            <p class="loop_form">
+                do<br>
+                statement
+              while (condition);
+            </p>
+            <p>statement is always executed once before the condition is checked (and then again until the while condition returns false). To execute multiple statements, use a block statement ({ ... }) to group those statements. If condition is true, the statement executes again. At the end of every execution, the condition is checked. When the condition is false, execution stops and control passes to the statement following do...while.</p>
+
+            <div class="sec-ex">
+              <h5>Example</h5>
+              <p>In the following example, the do loop iterates at least once and reiterates until i is no longer less than 5.</p>
+              <code>
+                  let i = 0;<br>
+                  do {<br>
+                    i += 1;<br>
+                    console.log(i);<br>
+                  } while (i < 5);<br>
+              </code>
+            </div>
+        </section>
+
+        <!-- while statement -->
       </main>
       <aside></aside>
 </body>
