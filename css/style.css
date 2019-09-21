@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
 /* setting variables*/
 :root {
-  --main-font:'Duru Sans', sans-serif;
-
+  --nav-col-dar:rgb(61, 61, 61);
+  --nav-col-lig:rgb(233, 233, 233);
 }
 
 
@@ -38,21 +38,17 @@ header{
 /* ASIDE*/
 
 aside{
-  background-color: rgb(233, 233, 233);
+  background-color: var(--nav-col-lig);
   margin-bottom: 1em;
   text-align: center;
-  border: solid rgb(82, 82, 82) 1.5px
+  border: solid var(--nav-col-dar) 1.5px
 }
 
 aside header{
   text-align: center;
+  font-weight: 600;
   font-size: 2em;
   padding: .75em;
-}
-
-aside a{
-  color: rgb(61, 61, 61);
-  font-size: 1.5em;
 }
 
 aside ul{
@@ -62,8 +58,25 @@ aside ul{
 aside li{
   padding: 1em;
   border-top: solid 1px black;
-
+  color: var(--nav-col-dar);
+  font-size: 1.5em;
 }
+
+aside li:hover{
+  color: var(--nav-col-lig);
+  background-color: var(--nav-col-dar);
+}
+aside a{
+  color: inherit;
+}
+
+aside a:hover{
+  text-decoration:underline;
+}
+
+
+
+
 
 /* MAIN*/
 main{
