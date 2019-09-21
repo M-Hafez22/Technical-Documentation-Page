@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Duru+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap');
 /* setting variables*/
 :root {
   --main-font:'Duru Sans', sans-serif;
@@ -24,6 +24,9 @@ p{
   font-family: 'Duru Sans', sans-serif;
 }
 
+header{
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 .page{
   display: flex;
