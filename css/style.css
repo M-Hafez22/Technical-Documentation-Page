@@ -41,7 +41,7 @@ aside{
   background-color: var(--nav-col-lig);
   margin-bottom: 1em;
   text-align: center;
-  border: solid var(--nav-col-dar) 1.5px
+  border: solid var(--nav-col-dar) 1.5px;
 }
 
 aside header{
@@ -82,3 +82,5 @@ aside a:hover{
 main{
 
 }
+
+header{color: red;}
