@@ -11,375 +11,380 @@
   <title>JavaScript Loops</title>
 </head>
 <body>
-  <main id="main-doc">
-    <article id='intro'>
-      <header>Introduction</header>
-      <p>Loops offer a quick and easy way to do something repeatedly. This chapter of the JavaScript Guide introduces the different iteration statements available to JavaScript.</p>
 
-      <p>You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction then Y steps in another; for example, the idea "Go five steps to the east" could be expressed this way as a loop:</p>
+  <div class="page">
 
-      <code>
-          for (let step = 0; step < 5; step++) {<br>
-            // Runs 5 times, with values of step 0 through 4.{<br>
-            console.log('Walking east one step');{<br>
-          }
-      </code>
+    <aside>
+        <nav  id="navbar">
+          <header>JavaScript Loops</header>
+          <ul>
+            <li><a class="nav-link" href="#for_Statement">For Statement</a></li>
+            <li><a class="nav-link" href="#while_do_statement">While do statement</a></li>
+            <li><a class="nav-link" href="#while_statement">while statement</a></li>
+            <li><a class="nav-link" href="#labeled_statement">labeled statemen</a></li>
+            <li><a class="nav-link" href="#break_statement">break statement</a></li>
+            <li><a class="nav-link" href="#continue_statement">continue statement</a></li>
+            <li><a class="nav-link" href="#for_in_statement">for in statement</a></li>
+            <li><a class="nav-link" href="#for_of_statement">for of statement</a></li>
+          </ul>
+        </nav>
+    </aside>
 
-      <p>There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times (and it's actually possible that number could be zero). The various loop mechanisms offer different ways to determine the start and end points of the loop. There are various situations that are more easily served by one type of loop over the others.</p>
 
-      <h4>The statements for loops provided in JavaScript are:</h4>
-      <!--
-      <ul>
-        <li>for statement</li>
-        <li>do...while statement</li>
-        <li>while statement</li>
-        <li>labeled statement</li>
-        <li>break statement</li>
-        <li>continue statement</li>
-        <li>for...in statement</li>
-        <li>for...of statement</li>
-      </ul>
-      -->
+    <main id="main-doc">
+      <article id='intro'>
+        <header>Introduction</header>
+        <p>Loops offer a quick and easy way to do something repeatedly. This chapter of the JavaScript Guide introduces the different iteration statements available to JavaScript.</p>
 
-    </article>
+        <p>You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction then Y steps in another; for example, the idea "Go five steps to the east" could be expressed this way as a loop:</p>
 
-    <!-- For Statement -->
-    <section id="for_Statement" class= "main-section">
-        <header  class="sec-header">for Statement</header>
-        <p>A for loop repeats until a specified condition evaluates to false. The JavaScript for loop is similar to the Java and C for loop. A for statement looks as follows:</p>
-        <p class="loop-form">
-            for ([initialExpression]; [condition]; [incrementExpression])</br>
+        <code>
+            for (let step = 0; step < 5; step++) {<br>
+              // Runs 5 times, with values of step 0 through 4.{<br>
+              console.log('Walking east one step');{<br>
+            }
+        </code>
+
+        <p>There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times (and it's actually possible that number could be zero). The various loop mechanisms offer different ways to determine the start and end points of the loop. There are various situations that are more easily served by one type of loop over the others.</p>
+
+        <h4>The statements for loops provided in JavaScript are:</h4>
+        <!--
+        <ul>
+          <li>for statement</li>
+          <li>do...while statement</li>
+          <li>while statement</li>
+          <li>labeled statement</li>
+          <li>break statement</li>
+          <li>continue statement</li>
+          <li>for...in statement</li>
+          <li>for...of statement</li>
+        </ul>
+        -->
+
+      </article>
+
+      <!-- For Statement -->
+      <section id="for_Statement" class= "main-section">
+          <header  class="sec-header">for Statement</header>
+          <p>A for loop repeats until a specified condition evaluates to false. The JavaScript for loop is similar to the Java and C for loop. A for statement looks as follows:</p>
+          <p class="loop-form">
+              for ([initialExpression]; [condition]; [incrementExpression])</br>
+                statement
+            </p>
+          <p>When a for loop executes, the following occurs:</p>
+          <ol>
+            <li>The initializing expression initialExpression, if any, is executed. This expression usually initializes one or more loop counters, but the syntax allows an expression of any degree of complexity. This expression can also declare variables.</li>
+            <li>e condition expression is evaluated. If the value of condition is true, the loop statements execute. If the value of condition is false, the for loop terminates. If the condition expression is omitted entirely, the condition is assumed to be true.</li>
+            <li>The statement executes. To execute multiple statements, use a block statement ({ ... }) to group those statements.</li>
+            <li>If present, the update expression incrementExpression is executed.</li>
+            <li>Control returns to step 2.</li>
+          </ol>
+    
+          <div class="sec-ex">
+            <h5 >Example</h5>
+            <p>The following function contains a for statement that counts the number of selected options in a scrolling list (a <select> element that allows multiple selections). The for statement declares the variable i and initializes it to zero. It checks that i is less than the number of options in the <select> element, performs the succeeding if statement, and increments i by one after each pass through the loop.</p>
+    
+            <code>
+              function howMany(selectObject) {<br>
+                let numberSelected = 0;<br>
+                for (let i = 0; i < selectObject.options.length; i++) {<br>
+                  if (selectObject.options[i].selected) {<br>
+                    numberSelected++;<br>
+                  }<br>
+                }<br>
+                return numberSelected;<br>
+              }<br>
+              <br>
+              let btn = document.getElementById('btn');<br>
+              btn.addEventListener('click', function() {<br>
+                alert('Number of options selected: ' + howMany<br>(document.selectForm.musicTypes));<br>
+              });
+            </code>
+    
+          </div>
+      </section>
+
+      <!-- While do statement -->
+      <section id="while_do_statement" class= "main-section">
+          <header  class="sec-header">while do statement</header>
+          <p>The do...while statement repeats until a specified condition evaluates to false. A do...while statement looks as follows:</p>
+          <p class="loop_form">
+              do<br>
+              statement
+            while (condition);
+          </p>
+          <p>statement is always executed once before the condition is checked (and then again until the while condition returns false). To execute multiple statements, use a block statement ({ ... }) to group those statements. If condition is true, the statement executes again. At the end of every execution, the condition is checked. When the condition is false, execution stops and control passes to the statement following do...while.</p>
+
+          <div class="sec-ex">
+            <h5>Example</h5>
+            <p>In the following example, the do loop iterates at least once and reiterates until i is no longer less than 5.</p>
+            <code>
+                let i = 0;<br>
+                do {<br>
+                  i += 1;<br>
+                  console.log(i);<br>
+                } while (i < 5);<br>
+            </code>
+          </div>
+      </section>
+
+      <!-- while statement -->
+      <section id="while_statement" class= "main-section">
+          <header class="sec-header">while statement</header>
+
+          <p>A while statement executes its statements as long as a specified condition evaluates to true. A while statement looks as follows:</p>
+
+          <p class="loop-form">
+              while (condition)<br>
               statement
           </p>
-        <p>When a for loop executes, the following occurs:</p>
-        <ol>
-          <li>The initializing expression initialExpression, if any, is executed. This expression usually initializes one or more loop counters, but the syntax allows an expression of any degree of complexity. This expression can also declare variables.</li>
-          <li>e condition expression is evaluated. If the value of condition is true, the loop statements execute. If the value of condition is false, the for loop terminates. If the condition expression is omitted entirely, the condition is assumed to be true.</li>
-          <li>The statement executes. To execute multiple statements, use a block statement ({ ... }) to group those statements.</li>
-          <li>If present, the update expression incrementExpression is executed.</li>
-          <li>Control returns to step 2.</li>
-        </ol>
-  
-        <div class="sec-ex">
-          <h5 >Example</h5>
-          <p>The following function contains a for statement that counts the number of selected options in a scrolling list (a <select> element that allows multiple selections). The for statement declares the variable i and initializes it to zero. It checks that i is less than the number of options in the <select> element, performs the succeeding if statement, and increments i by one after each pass through the loop.</p>
-  
-          <code>
-            function howMany(selectObject) {<br>
-              let numberSelected = 0;<br>
-              for (let i = 0; i < selectObject.options.length; i++) {<br>
-                if (selectObject.options[i].selected) {<br>
-                  numberSelected++;<br>
-                }<br>
-              }<br>
-              return numberSelected;<br>
-            }<br>
-            <br>
-            let btn = document.getElementById('btn');<br>
-            btn.addEventListener('click', function() {<br>
-              alert('Number of options selected: ' + howMany<br>(document.selectForm.musicTypes));<br>
-            });
-          </code>
-  
-        </div>
-    </section>
 
-    <!-- While do statement -->
-    <section id="while_do_statement" class= "main-section">
-        <header  class="sec-header">while do statement</header>
-        <p>The do...while statement repeats until a specified condition evaluates to false. A do...while statement looks as follows:</p>
-        <p class="loop_form">
-            do<br>
-            statement
-          while (condition);
-        </p>
-        <p>statement is always executed once before the condition is checked (and then again until the while condition returns false). To execute multiple statements, use a block statement ({ ... }) to group those statements. If condition is true, the statement executes again. At the end of every execution, the condition is checked. When the condition is false, execution stops and control passes to the statement following do...while.</p>
+          <p>If the condition becomes false, statement within the loop stops executing and control passes to the statement following the loop.</p>
 
-        <div class="sec-ex">
-          <h5>Example</h5>
-          <p>In the following example, the do loop iterates at least once and reiterates until i is no longer less than 5.</p>
-          <code>
-              let i = 0;<br>
-              do {<br>
-                i += 1;<br>
-                console.log(i);<br>
-              } while (i < 5);<br>
-          </code>
-        </div>
-    </section>
+          <p>The condition test occurs before statement in the loop is executed. If the condition returns true, statement is executed and the condition is tested again. If the condition returns false, execution stops and control is passed to the statement following while.</p>
 
-    <!-- while statement -->
-    <section id="while_statement" class= "main-section">
-        <header class="sec-header">while statement</header>
+          <p>To execute multiple statements, use a block statement ({ ... }) to group those statements.</p>
 
-        <p>A while statement executes its statements as long as a specified condition evaluates to true. A while statement looks as follows:</p>
+          <div class="sec-ex">
+            <h5>Example</h5>
+            <p>The following while loop iterates as long as n is less than three:</p>
+            <code>
+                let n = 0;<br>
+                let x = 0;<br>
+                while (n < 3) {<br>
+                  n++;<br>
+                  x += n;<br>
+                }
+            </code>
+            <p>With each iteration, the loop increments n and adds that value to x. Therefore, x and n take on the following values:</p>
+
+            <ul>
+              <li>After the first pass: n = 1 and x = 1</li>
+              <li>After the second pass: n = 2 and x = 3</li>
+              <li>After the third pass: n = 3 and x = 6</li>
+            </ul>
+
+            <p>After completing the third pass, the condition n < 3 is no longer true, so the loop terminates.</p>
+          </div>
+
+          <div class="sec-ex">
+            <h5>Example 2</h5>
+            <p>Avoid infinite loops. Make sure the condition in a loop eventually becomes false; otherwise, the loop will never terminate. The statements in the following while loop execute forever because the condition never becomes false:</p>
+            <code>
+                while (true) {<br>
+                  console.log('Hello, world!');<br>
+                }
+            </code>
+          </div>
+
+      </section>
+
+      <!-- labeled statemen -->
+      <section id="labeled_statement" class= "main-section">  
+        <header class="sec-header">labeled statement</header>
+
+        <p>A label provides a statement with an identifier that lets you refer to it elsewhere in your program. For example, you can use a label to identify a loop, and then use the break or continue statements to indicate whether a program should interrupt the loop or continue its execution.</p>
+
+        <p>The syntax of the labeled statement looks like the following:</p>
 
         <p class="loop-form">
-            while (condition)<br>
+            label :<br>
             statement
         </p>
 
-        <p>If the condition becomes false, statement within the loop stops executing and control passes to the statement following the loop.</p>
-
-        <p>The condition test occurs before statement in the loop is executed. If the condition returns true, statement is executed and the condition is tested again. If the condition returns false, execution stops and control is passed to the statement following while.</p>
-
-        <p>To execute multiple statements, use a block statement ({ ... }) to group those statements.</p>
+        <p>The value of label may be any JavaScript identifier that is not a reserved word. The statement that you identify with a label may be any statement.</p>
 
         <div class="sec-ex">
-          <h5>Example</h5>
-          <p>The following while loop iterates as long as n is less than three:</p>
+            <h5>Example</h5>
+            <p>In this example, the label markLoop identifies a while loop.</p>
+            <code>
+                markLoop:<br>
+                while (theMark == true) {<br>
+                    doSomething();<br>
+                }
+            </code>
+          </div>
+      </section>
+
+      <!-- break statement -->
+      <section id="break_statement" class= "main-section">
+        <header class="sec-header">break statement</header>
+        <p>Use the break statement to terminate a loop, switch, or in conjunction with a labeled statement.</p>
+
+        <ul>
+          <li>When you use break without a label, it terminates the innermost enclosing while, do-while, for, or switch immediately and transfers control to the following statement.</li>
+          <li>When you use break with a label, it terminates the specified labeled statement.</li>
+        </ul>
+
+        <p>The syntax of the break statement looks like this:</p>
+        <p>break [label];</p>
+        <p>The first form of the syntax terminates the innermost enclosing loop or switch; the second form of the syntax terminates the specified enclosing labeled statement.</p>
+
+        <div class="sec-ex">
+          <h5>Example 1</h5>
+          <p>The following example iterates through the elements in an array until it finds the index of an element whose value is theValue:</p>
           <code>
-              let n = 0;<br>
-              let x = 0;<br>
-              while (n < 3) {<br>
-                n++;<br>
-                x += n;<br>
+              for (let i = 0; i < a.length; i++) {<br>
+                if (a[i] == theValue) {<br>
+                  break;<br>
+                }<br>
               }
           </code>
-          <p>With each iteration, the loop increments n and adds that value to x. Therefore, x and n take on the following values:</p>
+        </div>
 
-          <ul>
-            <li>After the first pass: n = 1 and x = 1</li>
-            <li>After the second pass: n = 2 and x = 3</li>
-            <li>After the third pass: n = 3 and x = 6</li>
-          </ul>
+        <div class="sec-ex">
+          <h5>Example 2: Breaking to a label</h5>
+          <code>
+              let x = 0;<br>
+              let z = 0;<br>
+              labelCancelLoops: while (true) {<br>
+                console.log('Outer loops: ' + x);<br>
+                x += 1;<br>
+                z = 1;<br>
+                while (true) {<br>
+                  console.log('Inner loops: ' + z);<br>
+                  z += 1;<br>
+                  if (z === 10 && x === 10) {<br>
+                    break labelCancelLoops;<br>
+                  } else if (z === 10) {<br>
+                    break;<br>
+                  }<br>
+                }<br>
+              }
+          </code>
+        </div>
 
-          <p>After completing the third pass, the condition n < 3 is no longer true, so the loop terminates.</p>
+
+
+      </section>
+      
+      <!-- continue statement -->
+      <section id="continue_statement" class= "main-section">
+        <header class="sec-header">continue statement</h2>
+
+        <p>The continue statement can be used to restart a while, do-while, for, or label statement.</p>
+
+        <ul>
+          <li>When you use continue without a label, it terminates the current iteration of the innermost enclosing while, do-while, or for statement and continues execution of the loop with the next iteration. In contrast to the break statement, continue does not terminate the execution of the loop entirely. In a while loop, it jumps back to the condition. In a for loop, it jumps to the increment-expression.</li>
+          <li>When you use continue with a label, it applies to the looping statement identified with that label.</li>
+        </ul>
+
+        <p>The syntax of the continue statement looks like the following:</p>
+        <p class="loop-form"> continue [label];</p>
+        <div class="sec-ex">
+          <h5>Example 1</h5>
+          <p>The following example shows a while loop with a continue statement that executes when the value of i is three. Thus, n takes on the values one, three, seven, and twelve</p>
+          <code>
+              let i = 0;<br>
+              let n = 0;<br>
+              while (i < 5) {<br>
+                i++;<br>
+                if (i == 3) {<br>
+                  continue;<br>
+                }<br>
+                n += i;<br>
+                console.log(n);<br>
+              }<br>
+              //1,3,7,12<br>
+              <br>
+              <br>
+              let i = 0; <br>
+              let n = 0; <br>
+              while (i < 5) { <br>
+                i++; <br>
+                if (i == 3) {<br> 
+                    // continue; <br>
+                } <br>
+                n += i; <br>
+                console.log(n);<br>
+              }<br>
+              // 1,3,6,10,15
+          </code>
         </div>
 
         <div class="sec-ex">
           <h5>Example 2</h5>
-          <p>Avoid infinite loops. Make sure the condition in a loop eventually becomes false; otherwise, the loop will never terminate. The statements in the following while loop execute forever because the condition never becomes false:</p>
+          <p>A statement labeled checkiandj contains a statement labeled checkj. If continue is encountered, the program terminates the current iteration of checkj and begins the next iteration. Each time continue is encountered, checkj reiterates until its condition returns false. When false is returned, the remainder of the checkiandj statement is completed, and checkiandj reiterates until its condition returns false. When false is returned, the program continues at the statement following checkiandj.</p>
+          <p>If continue had a label of checkiandj, the program would continue at the top of the checkiandj statement.</p>
           <code>
-              while (true) {<br>
-                console.log('Hello, world!');<br>
-              }
-          </code>
-        </div>
-
-    </section>
-
-    <!-- labeled statemen -->
-    <section id="labeled_statement" class= "main-section">  
-      <header class="sec-header">labeled statement</header>
-
-      <p>A label provides a statement with an identifier that lets you refer to it elsewhere in your program. For example, you can use a label to identify a loop, and then use the break or continue statements to indicate whether a program should interrupt the loop or continue its execution.</p>
-
-      <p>The syntax of the labeled statement looks like the following:</p>
-
-      <p class="loop-form">
-          label :<br>
-          statement
-      </p>
-
-      <p>The value of label may be any JavaScript identifier that is not a reserved word. The statement that you identify with a label may be any statement.</p>
-
-      <div class="sec-ex">
-          <h5>Example</h5>
-          <p>In this example, the label markLoop identifies a while loop.</p>
-          <code>
-              markLoop:<br>
-              while (theMark == true) {<br>
-                  doSomething();<br>
-              }
-          </code>
-        </div>
-    </section>
-
-    <!-- break statement -->
-    <section id="break_statement" class= "main-section">
-      <header class="sec-header">break statement</header>
-      <p>Use the break statement to terminate a loop, switch, or in conjunction with a labeled statement.</p>
-
-      <ul>
-        <li>When you use break without a label, it terminates the innermost enclosing while, do-while, for, or switch immediately and transfers control to the following statement.</li>
-        <li>When you use break with a label, it terminates the specified labeled statement.</li>
-      </ul>
-
-      <p>The syntax of the break statement looks like this:</p>
-      <p>break [label];</p>
-      <p>The first form of the syntax terminates the innermost enclosing loop or switch; the second form of the syntax terminates the specified enclosing labeled statement.</p>
-
-      <div class="sec-ex">
-        <h5>Example 1</h5>
-        <p>The following example iterates through the elements in an array until it finds the index of an element whose value is theValue:</p>
-        <code>
-            for (let i = 0; i < a.length; i++) {<br>
-              if (a[i] == theValue) {<br>
-                break;<br>
-              }<br>
-            }
-        </code>
-      </div>
-
-      <div class="sec-ex">
-        <h5>Example 2: Breaking to a label</h5>
-        <code>
-            let x = 0;<br>
-            let z = 0;<br>
-            labelCancelLoops: while (true) {<br>
-              console.log('Outer loops: ' + x);<br>
-              x += 1;<br>
-              z = 1;<br>
-              while (true) {<br>
-                console.log('Inner loops: ' + z);<br>
-                z += 1;<br>
-                if (z === 10 && x === 10) {<br>
-                  break labelCancelLoops;<br>
-                } else if (z === 10) {<br>
-                  break;<br>
-                }<br>
-              }<br>
-            }
-        </code>
-      </div>
-
-
-
-    </section>
-    
-    <!-- continue statement -->
-    <section id="continue_statement" class= "main-section">
-      <header class="sec-header">continue statement</h2>
-
-      <p>The continue statement can be used to restart a while, do-while, for, or label statement.</p>
-
-      <ul>
-        <li>When you use continue without a label, it terminates the current iteration of the innermost enclosing while, do-while, or for statement and continues execution of the loop with the next iteration. In contrast to the break statement, continue does not terminate the execution of the loop entirely. In a while loop, it jumps back to the condition. In a for loop, it jumps to the increment-expression.</li>
-        <li>When you use continue with a label, it applies to the looping statement identified with that label.</li>
-      </ul>
-
-      <p>The syntax of the continue statement looks like the following:</p>
-      <p class="loop-form"> continue [label];</p>
-      <div class="sec-ex">
-        <h5>Example 1</h5>
-        <p>The following example shows a while loop with a continue statement that executes when the value of i is three. Thus, n takes on the values one, three, seven, and twelve</p>
-        <code>
-            let i = 0;<br>
-            let n = 0;<br>
-            while (i < 5) {<br>
-              i++;<br>
-              if (i == 3) {<br>
-                continue;<br>
-              }<br>
-              n += i;<br>
-              console.log(n);<br>
-            }<br>
-            //1,3,7,12<br>
-            <br>
-            <br>
-            let i = 0; <br>
-            let n = 0; <br>
-            while (i < 5) { <br>
-              i++; <br>
-              if (i == 3) {<br> 
-                  // continue; <br>
-              } <br>
-              n += i; <br>
-              console.log(n);<br>
-            }<br>
-            // 1,3,6,10,15
-        </code>
-      </div>
-
-      <div class="sec-ex">
-        <h5>Example 2</h5>
-        <p>A statement labeled checkiandj contains a statement labeled checkj. If continue is encountered, the program terminates the current iteration of checkj and begins the next iteration. Each time continue is encountered, checkj reiterates until its condition returns false. When false is returned, the remainder of the checkiandj statement is completed, and checkiandj reiterates until its condition returns false. When false is returned, the program continues at the statement following checkiandj.</p>
-        <p>If continue had a label of checkiandj, the program would continue at the top of the checkiandj statement.</p>
-        <code>
-            let i = 0; <br>
-            let j = 10; <br>
-            checkiandj: <br>
-              while (i < 4) {  <br>
-                console.log(i); <br>
-                i += 1; <br>
-                checkj: <br>
-                  while (j > 4) { <br>
-                    console.log(j); <br>
-                    j -= 1; <br>
-                    if ((j % 2) == 0) { <br>
-                      continue checkj; <br>
+              let i = 0; <br>
+              let j = 10; <br>
+              checkiandj: <br>
+                while (i < 4) {  <br>
+                  console.log(i); <br>
+                  i += 1; <br>
+                  checkj: <br>
+                    while (j > 4) { <br>
+                      console.log(j); <br>
+                      j -= 1; <br>
+                      if ((j % 2) == 0) { <br>
+                        continue checkj; <br>
+                      } <br>
+                      console.log(j + ' is odd.'); <br>
                     } <br>
-                    console.log(j + ' is odd.'); <br>
-                  } <br>
-                  console.log('i = ' + i); <br>
-                  console.log('j = ' + j); <br>
+                    console.log('i = ' + i); <br>
+                    console.log('j = ' + j); <br>
+                }
+          </code>
+        </div>
+      </section>
+
+      <!-- for...in statement -->
+      <section id="for_in_statement" class=  "main-section">
+        <header class="sec-header">for in statement</header>
+        <p>The for...in statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements. A for...in statement looks as follows:</p>
+        <p class="loop-form">
+            for (variable in object)<br>
+            statement
+        </p>
+
+        <div class="sec-ex">
+          <h5>Example</h5>
+          <p>The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.</p>
+          <code>
+              function dump_props(obj, obj_name) { <br>
+                let result = ''; <br>
+                for (let i in obj) { <br>
+                  result += obj_name + '.' + i + ' = ' + obj[i] + '&lt;br&gt;'; <br>
+                } <br>
+                result += '&lt;hr&gt;'; <br>
+                return result; <br>
               }
-        </code>
-      </div>
-    </section>
+          </code>
+          <p>For an object car with properties make and model, result would be:</p>
+          <p class="code">
+            car.make = Ford<br>
+            car.model = Mustang
+          </p>
+        </div>
+      </section>
 
-    <!-- for...in statement -->
-    <section id="for_in_statement" class=  "main-section">
-      <header class="sec-header">for in statement</header>
-      <p>The for...in statement iterates a specified variable over all the enumerable properties of an object. For each distinct property, JavaScript executes the specified statements. A for...in statement looks as follows:</p>
-      <p class="loop-form">
-          for (variable in object)<br>
-          statement
-      </p>
-
-      <div class="sec-ex">
-        <h5>Example</h5>
-        <p>The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.</p>
+      <!-- for...of statement -->
+      <section id="for_of_statement" class= "main-section">
+        <header class="sec-header">for of statement</header>
+        <p>The for...of statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.</p>
+        <p class="loop-form">
+            for (variable of object) <br>
+            statement
+        </p>
+        <p>The following example shows the difference between a for...of loop and a for...in loop. While for...in iterates over property names, for...of iterates over property values:</p>
         <code>
-            function dump_props(obj, obj_name) { <br>
-              let result = ''; <br>
-              for (let i in obj) { <br>
-                result += obj_name + '.' + i + ' = ' + obj[i] + '&lt;br&gt;'; <br>
-              } <br>
-              result += '&lt;hr&gt;'; <br>
-              return result; <br>
+            onst arr = [3, 5, 7]; <br>
+            arr.foo = 'hello'; <br>
+            <br>
+            for (let i in arr) { <br>
+                console.log(i); // logs "0", "1", "2", "foo" <br>
+            } <br>
+            <br>
+            for (let i of arr) { <br>
+                console.log(i); // logs 3, 5, 7 <br>
             }
         </code>
-        <p>For an object car with properties make and model, result would be:</p>
-        <p class="code">
-          car.make = Ford<br>
-          car.model = Mustang
-        </p>
-      </div>
-    </section>
+      </section>
 
-    <!-- for...of statement -->
-    <section id="for_of_statement" class= "main-section">
-      <header class="sec-header">for of statement</header>
-      <p>The for...of statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on), invoking a custom iteration hook with statements to be executed for the value of each distinct property.</p>
-      <p class="loop-form">
-          for (variable of object) <br>
-          statement
-      </p>
-      <p>The following example shows the difference between a for...of loop and a for...in loop. While for...in iterates over property names, for...of iterates over property values:</p>
-      <code>
-          onst arr = [3, 5, 7]; <br>
-          arr.foo = 'hello'; <br>
-          <br>
-          for (let i in arr) { <br>
-              console.log(i); // logs "0", "1", "2", "foo" <br>
-          } <br>
-          <br>
-          for (let i of arr) { <br>
-              console.log(i); // logs 3, 5, 7 <br>
-          }
-      </code>
-    </section>
+    </main>
 
-  </main>
-
-
-  <aside>
-    <nav  id="navbar">
-      <header>JavaScript Loops</header>
-      <ul>
-        <li><a class="nav-link" href="#for_Statement">For Statement</a></li>
-        <li><a class="nav-link" href="#while_do_statement">While do statement</a></li>
-        <li><a class="nav-link" href="#while_statement">while statement</a></li>
-        <li><a class="nav-link" href="#labeled_statement">labeled statemen</a></li>
-        <li><a class="nav-link" href="#break_statement">break statement</a></li>
-        <li><a class="nav-link" href="#continue_statement">continue statement</a></li>
-        <li><a class="nav-link" href="#for_in_statement">for in statement</a></li>
-        <li><a class="nav-link" href="#for_of_statement">for of statement</a></li>
-      </ul>
-    </nav>
-  </aside>
+  </div>
 </body>
 </html>
 

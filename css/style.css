@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Duru+Sans&display=swap');
+
 /* setting variables*/
-:root { 
+:root {
+  --main-font:'Duru Sans', sans-serif;
+
 }
 
 
@@ -11,8 +15,54 @@
     box-sizing: border-box;
 }
 
+
+a{
+  text-decoration: none;
+}
+
+p{
+  font-family: 'Duru Sans', sans-serif;
+}
+
+
+.page{
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1em auto;
+}
+
+/* ASIDE*/
+
+aside{
+  background-color: rgb(233, 233, 233);
+  margin-bottom: 1em;
+  text-align: center;
+  border: solid rgb(82, 82, 82) 1.5px
+}
+
+aside header{
+  text-align: center;
+  font-size: 2em;
+  padding: .75em;
+}
+
+aside a{
+  color: rgb(61, 61, 61);
+  font-size: 1.5em;
+}
+
+aside ul{
+  list-style-type: none;
+}
+
+aside li{
+  padding: 1em;
+  border-top: solid 1px black;
+
+}
+
 /* MAIN*/
 main{
-  width: 90%;
-  margin: auto;
+
 }
