@@ -4,6 +4,9 @@
 :root {
   --nav-col-dar:rgb(61, 61, 61);
   --nav-col-lig:rgb(233, 233, 233);
+  --font-col-lig:rgb(36, 35, 35);
+  --font-col-dar:rgb(0, 0, 0);
+  --font-col-sp:rgb(32, 54, 180);
 }
 
 
@@ -22,11 +25,21 @@ a{
 
 p{
   font-family: 'Duru Sans', sans-serif;
+  color: var(--font-col-lig)
 }
 
 header{
   font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+  color:var(--font-col-dar);
 }
+
+code{
+  color: var(--font-col-sp);
+}
+
+
 
 .page{
   display: flex;
@@ -80,5 +93,13 @@ aside a:hover{
 
 /* MAIN*/
 main{
+  padding-top:1em;
+}
 
+main header {
+  padding-bottom: .5em;
+}
+
+hr{
+  color: brown;
 }
