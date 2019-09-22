@@ -36,11 +36,20 @@ header{
   color:var(--font-col-dar);
 }
 
+h5{
+  font-size: 1.5em;
+  color: var(--font-col-dar);
+}
+
 code{
   color: var(--font-col-sp);
 }
 
-
+ol,ul{
+  color: var(--nav-col-dar);
+  font-size: 1.25em;
+  margin: 1em;
+}
 
 .page{
   display: flex;
