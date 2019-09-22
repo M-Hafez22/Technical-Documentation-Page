@@ -130,7 +130,6 @@ hr{
   body{background-color: aquamarine}
 
   .page{
-    flex-direction: row-reverse;
     width: 100%;
     margin: 1em auto;
   }
@@ -140,6 +139,8 @@ hr{
     position: fixed;
     top: 0;
     left: 0;
+    height: 100vh;
+    border-right: 3px solid var(--font-col-dar); 
   }
 
   
@@ -148,10 +149,15 @@ aside header{
   font-size: 1.5em;
 }
 
+aside ul{
+}
 
 aside li{
   font-size: 1em;
 }
 
+main{
+  margin-left: 300px;
+}
 
 }
