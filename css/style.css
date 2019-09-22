@@ -98,7 +98,7 @@ main{
 }
 
 main header {
-  padding-bottom: .5em;
+  padding: .5em 0 .25em;
 }
 
 hr{
