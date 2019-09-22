@@ -124,3 +124,34 @@ hr{
   padding: 1em;
   border-left: solid 5px var(--font-col-sp);;
 }
+
+
+@media only screen and (min-width: 900px) {
+  body{background-color: aquamarine}
+
+  .page{
+    flex-direction: row-reverse;
+    width: 100%;
+    margin: 1em auto;
+  }
+
+  aside{
+    min-width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  
+aside header{
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+
+aside li{
+  font-size: 1em;
+}
+
+
+}
