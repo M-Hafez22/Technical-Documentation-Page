@@ -36,13 +36,14 @@
         <p>Loops offer a quick and easy way to do something repeatedly. This chapter of the JavaScript Guide introduces the different iteration statements available to JavaScript.</p>
 
         <p>You can think of a loop as a computerized version of the game where you tell someone to take X steps in one direction then Y steps in another; for example, the idea "Go five steps to the east" could be expressed this way as a loop:</p>
-
-        <code>
+        <div class="code">
+          <code>
             for (let step = 0; step < 5; step++) {<br>
               // Runs 5 times, with values of step 0 through 4.{<br>
-              console.log('Walking east one step');{<br>
-            }
-        </code>
+                console.log('Walking east one step');{<br>
+                }
+          </code>
+        </div>
 
         <p>There are many different kinds of loops, but they all essentially do the same thing: they repeat an action some number of times (and it's actually possible that number could be zero). The various loop mechanisms offer different ways to determine the start and end points of the loop. There are various situations that are more easily served by one type of loop over the others.</p>
 
@@ -82,24 +83,24 @@
           <div class="sec-ex">
             <h5 >Example</h5>
             <p>The following function contains a for statement that counts the number of selected options in a scrolling list (a <select> element that allows multiple selections). The for statement declares the variable i and initializes it to zero. It checks that i is less than the number of options in the <select> element, performs the succeeding if statement, and increments i by one after each pass through the loop.</p>
-    
-            <code>
-              function howMany(selectObject) {<br>
-                let numberSelected = 0;<br>
-                for (let i = 0; i < selectObject.options.length; i++) {<br>
-                  if (selectObject.options[i].selected) {<br>
-                    numberSelected++;<br>
+            <div class="code">
+              <code>
+                  function howMany(selectObject) {<br>
+                    let numberSelected = 0;<br>
+                    for (let i = 0; i < selectObject.options.length; i++) {<br>
+                      if (selectObject.options[i].selected) {<br>
+                        numberSelected++;<br>
+                      }<br>
+                    }<br>
+                    return numberSelected;<br>
                   }<br>
-                }<br>
-                return numberSelected;<br>
-              }<br>
-              <br>
-              let btn = document.getElementById('btn');<br>
-              btn.addEventListener('click', function() {<br>
-                alert('Number of options selected: ' + howMany<br>(document.selectForm.musicTypes));<br>
-              });
-            </code>
-    
+                  <br>
+                  let btn = document.getElementById('btn');<br>
+                  btn.addEventListener('click', function() {<br>
+                    alert('Number of options selected: ' + howMany<br>(document.selectForm.musicTypes));<br>
+                  });
+              </code>
+            </div>
           </div>
           <hr>
       </section>
@@ -118,13 +119,15 @@
           <div class="sec-ex">
             <h5>Example</h5>
             <p>In the following example, the do loop iterates at least once and reiterates until i is no longer less than 5.</p>
-            <code>
-                let i = 0;<br>
-                do {<br>
-                  i += 1;<br>
-                  console.log(i);<br>
-                } while (i < 5);<br>
-            </code>
+            <div class="code">
+              <code>
+                  let i = 0;<br>
+                  do {<br>
+                    i += 1;<br>
+                    console.log(i);<br>
+                  } while (i < 5);<br>
+              </code>
+            </div>
           </div>
           <hr>
       </section>
@@ -149,14 +152,16 @@
           <div class="sec-ex">
             <h5>Example</h5>
             <p>The following while loop iterates as long as n is less than three:</p>
-            <code>
-                let n = 0;<br>
-                let x = 0;<br>
-                while (n < 3) {<br>
-                  n++;<br>
-                  x += n;<br>
-                }
-            </code>
+            <div class="code">
+              <code>
+                  let n = 0;<br>
+                  let x = 0;<br>
+                  while (n < 3) {<br>
+                    n++;<br>
+                    x += n;<br>
+                  }
+              </code>
+            </div>
             <p>With each iteration, the loop increments n and adds that value to x. Therefore, x and n take on the following values:</p>
 
             <ul>
@@ -171,11 +176,13 @@
           <div class="sec-ex">
             <h5>Example 2</h5>
             <p>Avoid infinite loops. Make sure the condition in a loop eventually becomes false; otherwise, the loop will never terminate. The statements in the following while loop execute forever because the condition never becomes false:</p>
-            <code>
-                while (true) {<br>
-                  console.log('Hello, world!');<br>
-                }
-            </code>
+            <div class="code">
+              <code>
+                  while (true) {<br>
+                    console.log('Hello, world!');<br>
+                  }
+              </code>
+            </div>
           </div>
           <hr>
       </section>
@@ -198,12 +205,14 @@
         <div class="sec-ex">
             <h5>Example</h5>
             <p>In this example, the label markLoop identifies a while loop.</p>
-            <code>
-                markLoop:<br>
-                while (theMark == true) {<br>
-                    doSomething();<br>
-                }
-            </code>
+            <div class="code">
+              <code>
+                  markLoop:<br>
+                  while (theMark == true) {<br>
+                      doSomething();<br>
+                  }
+              </code>
+            </div>
           </div>
           <hr>
       </section>
@@ -225,35 +234,39 @@
         <div class="sec-ex">
           <h5>Example 1</h5>
           <p>The following example iterates through the elements in an array until it finds the index of an element whose value is theValue:</p>
-          <code>
-              for (let i = 0; i < a.length; i++) {<br>
-                if (a[i] == theValue) {<br>
-                  break;<br>
-                }<br>
-              }
-          </code>
+          <div class="code">
+            <code>
+                for (let i = 0; i < a.length; i++) {<br>
+                  if (a[i] == theValue) {<br>
+                    break;<br>
+                  }<br>
+                }
+            </code>
+          </div>
         </div>
 
         <div class="sec-ex">
           <h5>Example 2: Breaking to a label</h5>
-          <code>
-              let x = 0;<br>
-              let z = 0;<br>
-              labelCancelLoops: while (true) {<br>
-                console.log('Outer loops: ' + x);<br>
-                x += 1;<br>
-                z = 1;<br>
-                while (true) {<br>
-                  console.log('Inner loops: ' + z);<br>
-                  z += 1;<br>
-                  if (z === 10 && x === 10) {<br>
-                    break labelCancelLoops;<br>
-                  } else if (z === 10) {<br>
-                    break;<br>
+          <div class="code">
+            <code>
+                let x = 0;<br>
+                let z = 0;<br>
+                labelCancelLoops: while (true) {<br>
+                  console.log('Outer loops: ' + x);<br>
+                  x += 1;<br>
+                  z = 1;<br>
+                  while (true) {<br>
+                    console.log('Inner loops: ' + z);<br>
+                    z += 1;<br>
+                    if (z === 10 && x === 10) {<br>
+                      break labelCancelLoops;<br>
+                    } else if (z === 10) {<br>
+                      break;<br>
+                    }<br>
                   }<br>
-                }<br>
-              }
-          </code>
+                }
+            </code>
+          </div>
         </div>
         <hr>
       </section>
@@ -274,58 +287,62 @@
         <div class="sec-ex">
           <h5>Example 1</h5>
           <p>The following example shows a while loop with a continue statement that executes when the value of i is three. Thus, n takes on the values one, three, seven, and twelve</p>
-          <code>
-              let i = 0;<br>
-              let n = 0;<br>
-              while (i < 5) {<br>
-                i++;<br>
-                if (i == 3) {<br>
-                  continue;<br>
-                }<br>
-                n += i;<br>
-                console.log(n);<br>
-              }<br>
-              //1,3,7,12<br>
-              <br>
-              <br>
-              let i = 0; <br>
-              let n = 0; <br>
-              while (i < 5) { <br>
-                i++; <br>
-                if (i == 3) {<br> 
-                    // continue; <br>
-                } <br>
-                n += i; <br>
-                console.log(n);<br>
-              }<br>
-              // 1,3,6,10,15
-          </code>
+          <div class="code">
+              <code>
+                  let i = 0;<br>
+                  let n = 0;<br>
+                  while (i < 5) {<br>
+                    i++;<br>
+                    if (i == 3) {<br>
+                      continue;<br>
+                    }<br>
+                    n += i;<br>
+                    console.log(n);<br>
+                  }<br>
+                  //1,3,7,12<br>
+                  <br>
+                  <br>
+                  let i = 0; <br>
+                  let n = 0; <br>
+                  while (i < 5) { <br>
+                    i++; <br>
+                    if (i == 3) {<br> 
+                        // continue; <br>
+                    } <br>
+                    n += i; <br>
+                    console.log(n);<br>
+                  }<br>
+                  // 1,3,6,10,15
+              </code>
+          </div>
         </div>
 
         <div class="sec-ex">
           <h5>Example 2</h5>
           <p>A statement labeled checkiandj contains a statement labeled checkj. If continue is encountered, the program terminates the current iteration of checkj and begins the next iteration. Each time continue is encountered, checkj reiterates until its condition returns false. When false is returned, the remainder of the checkiandj statement is completed, and checkiandj reiterates until its condition returns false. When false is returned, the program continues at the statement following checkiandj.</p>
           <p>If continue had a label of checkiandj, the program would continue at the top of the checkiandj statement.</p>
-          <code>
-              let i = 0; <br>
-              let j = 10; <br>
-              checkiandj: <br>
-                while (i < 4) {  <br>
-                  console.log(i); <br>
-                  i += 1; <br>
-                  checkj: <br>
-                    while (j > 4) { <br>
-                      console.log(j); <br>
-                      j -= 1; <br>
-                      if ((j % 2) == 0) { <br>
-                        continue checkj; <br>
+          <div class="code">
+            <code>
+                let i = 0; <br>
+                let j = 10; <br>
+                checkiandj: <br>
+                  while (i < 4) {  <br>
+                    console.log(i); <br>
+                    i += 1; <br>
+                    checkj: <br>
+                      while (j > 4) { <br>
+                        console.log(j); <br>
+                        j -= 1; <br>
+                        if ((j % 2) == 0) { <br>
+                          continue checkj; <br>
+                        } <br>
+                        console.log(j + ' is odd.'); <br>
                       } <br>
-                      console.log(j + ' is odd.'); <br>
-                    } <br>
-                    console.log('i = ' + i); <br>
-                    console.log('j = ' + j); <br>
-                }
-          </code>
+                      console.log('i = ' + i); <br>
+                      console.log('j = ' + j); <br>
+                  }
+            </code>
+          </div>
         </div>
         <hr>
       </section>
@@ -342,18 +359,20 @@
         <div class="sec-ex">
           <h5>Example</h5>
           <p>The following function takes as its argument an object and the object's name. It then iterates over all the object's properties and returns a string that lists the property names and their values.</p>
-          <code>
-              function dump_props(obj, obj_name) { <br>
-                let result = ''; <br>
-                for (let i in obj) { <br>
-                  result += obj_name + '.' + i + ' = ' + obj[i] + '&lt;br&gt;'; <br>
-                } <br>
-                result += '&lt;hr&gt;'; <br>
-                return result; <br>
-              }
-          </code>
+          <div class="code">
+            <code>
+                function dump_props(obj, obj_name) { <br>
+                  let result = ''; <br>
+                  for (let i in obj) { <br>
+                    result += obj_name + '.' + i + ' = ' + obj[i] + '&lt;br&gt;'; <br>
+                  } <br>
+                  result += '&lt;hr&gt;'; <br>
+                  return result; <br>
+                }
+            </code>
+          </div>
           <p>For an object car with properties make and model, result would be:</p>
-          <p class="code">
+          <p>
             car.make = Ford<br>
             car.model = Mustang
           </p>
@@ -370,18 +389,20 @@
             statement
         </p>
         <p>The following example shows the difference between a for...of loop and a for...in loop. While for...in iterates over property names, for...of iterates over property values:</p>
-        <code>
-            onst arr = [3, 5, 7]; <br>
-            arr.foo = 'hello'; <br>
-            <br>
-            for (let i in arr) { <br>
-                console.log(i); // logs "0", "1", "2", "foo" <br>
-            } <br>
-            <br>
-            for (let i of arr) { <br>
-                console.log(i); // logs 3, 5, 7 <br>
-            }
-        </code>
+        <div class="code">
+          <code>
+              onst arr = [3, 5, 7]; <br>
+              arr.foo = 'hello'; <br>
+              <br>
+              for (let i in arr) { <br>
+                  console.log(i); // logs "0", "1", "2", "foo" <br>
+              } <br>
+              <br>
+              for (let i of arr) { <br>
+                  console.log(i); // logs 3, 5, 7 <br>
+              }
+          </code>
+        </div>
         <hr>
       </section>
 

@@ -25,7 +25,8 @@ a{
 
 p{
   font-family: 'Duru Sans', sans-serif;
-  color: var(--font-col-lig)
+  color: var(--font-col-lig);
+  margin: 1em;
 }
 
 header{
@@ -101,5 +102,15 @@ main header {
 }
 
 hr{
-  color: brown;
+  margin:1em .25em;
+  color: var(--font-col-sp);
+}
+
+
+.code{
+  background-color: var(--nav-col-lig);
+  font-size: 1.25em;
+  margin: 1em 2em;
+  padding: 1em;
+  border-left: solid 5px var(--font-col-sp);;
 }
