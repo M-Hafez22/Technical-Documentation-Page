@@ -48,14 +48,16 @@ code{
 
 ol,ul{
   color: var(--nav-col-dar);
-  font-size: 1.25em;
+  font-size: 1em;
+  text-align: center;
   margin: 1em;
 }
+
 
 .page{
   display: flex;
   flex-direction: column;
-  width: 90%;
+  align-items: center;
   margin: 1em auto;
 }
 
@@ -64,7 +66,6 @@ ol,ul{
 aside{
   background-color: var(--nav-col-lig);
   margin-bottom: 1em;
-  text-align: center;
   border: solid var(--nav-col-dar) 1.5px;
 }
 
@@ -128,41 +129,41 @@ hr{
 }
 
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 800px) {
 
   .page{
     width: 100%;
-    margin: 1em auto;
+    margin:0;
   }
 
   aside{
-    min-width: 250px;
+    min-width: 200px;
+    width: 250px;
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     border-right: 3px solid var(--font-col-dar); 
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
-  
-aside header{
-  font-weight: 600;
-  font-size: 1.5em;
-}
+    
+  aside header{
+    font-weight: 600;
+    font-size: 1.5em;
+  }
 
-aside ul{
-}
+  aside li{
+    padding: .5em;
+    margin: 0;
+  }
 
-aside li{
-  font-size: 1em;
-}
+  main{
+    margin-left: 300px;
+  }
 
-main{
-  margin-left: 300px;
-}
-
-.code{
-  width: max-content;
-}
+  .code{
+  }
 
 }
